@@ -349,7 +349,6 @@ def reverse_list_in_place(items):
     for n in range(len(items)/2):
         items[n], items[-(n+1)] = items[-(n+1)], items[n]
 
-    return items
 
 """I wasnt sure why this one raised errors.
  I tried to print the results out and they looked correct. """
