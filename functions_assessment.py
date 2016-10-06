@@ -15,6 +15,7 @@
 #    If the user does not provide a tax rate it should default to 5% 
 
 def tax_calculator(state, cost, tax = 0.05):
+    """Calculates total_cost of an item, state tax figure"""
 
     if state == "CA":
         tax = 0.07
@@ -38,6 +39,8 @@ def tax_calculator(state, cost, tax = 0.05):
 
 
 def is_berry(fruit):
+    """Determines if the fruit is in berry list"""
+
     if fruit in ["strawberry", "cherry", "blackberry"]:
         return True
     else:
@@ -45,6 +48,7 @@ def is_berry(fruit):
 
 
 def shipping_cost(fruit):
+    """Calculates shipping cust of fruit"""
 
     if is_berry(fruit) is True:
         return "0"
@@ -67,27 +71,26 @@ def shipping_cost(fruit):
 #        we're from the same place!", or "Hi 'full name here', where are you
 #        from?" depending on what `is_hometown()` evaluates to.
 
+
 def is_hometown(hometown):
+    """check if unser input hometown is the same as my hometown"""
 
-    my_hometown = "Kaohsiung"
-
-    if hometown == my_hometown:
-        return True
-    else:
-        return False
+    return hometown == "Kaohsiung"
 
 
 def full_name(firstname, lastname):
+    """Construct user full name""" 
 
     return firstname + " " + lastname
 
 
 def hometown_greeting(hometown, firstname, lastname):
+    """Output greetings depends on is_hometown function"""
 
     user_hometown = is_hometown(hometown)
     user_full_name = full_name(firstname, lastname)
 
-    if user_hometown is True:
+    if user_hometown:
         print "Hi, %s, we're from the same place!" % (user_full_name)
     else:
         print "Hi %s, where are you from?" % (user_full_name)
@@ -104,6 +107,7 @@ def hometown_greeting(hometown, firstname, lastname):
 
 
 def increment(x = 1):
+    """ Create function that increment a fixed number"""
 
     def add(y):
         return x + y
@@ -126,6 +130,7 @@ addfive(20)
 
 
 def append_number(number, a_list):
+    """Append the given number to the end of the list """
     a_list.append(number)
     return a_list
 

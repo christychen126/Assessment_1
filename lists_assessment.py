@@ -16,10 +16,9 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    all_odd = [number for number in numbers if number%2 != 0]
+    return [number for number in numbers if number%2 != 0]
 
 
-    return all_odd
 
 
 def print_indices(items):
@@ -41,9 +40,8 @@ def print_indices(items):
         2 Volvo
     """
 
-    new_list = list(enumerate(items))
-    for item in new_list:
-        print str(item[0]) + " " + item[1]
+    for index, item in enumerate(items):
+        print index, item
 
 
 def foods_in_common(foods1, foods2):
@@ -94,17 +92,18 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    if len(items) % 2 == 0:
-        return_item_number = len(items)/2
-    else:
-        return_item_number = len(items)/2 + 1
+    # if len(items) % 2 == 0:
+    #     return_item_number = len(items)/2
+    # else:
+    #     return_item_number = len(items)/2 + 1
 
-    new_list = []
+    # new_list = []
 
-    for i in range(return_item_number):
-        new_list.append(items[2*i])
+    # for i in range(return_item_number):
+    #     new_list.append(items[2*i])
 
-    return new_list
+    # return new_list
+    return items[::2]
 
 def largest_n_items(items, n):
     """Return the `n` largest integers in list, in ascending order.
